@@ -1,0 +1,99 @@
+
+.todowhole{
+	border:2px solid #E00;	
+	width: 50%;
+}
+
+h1 {
+	color: black;
+	font-size: 3rem;
+	font-weight: 50;
+	text-align: center;
+	margin: 1rem 0 3rem; 
+	font-family: 'Hind', sans-serif;
+}
+
+.title{
+	color: lime;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.inputDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 45%;
+	margin: auto;
+	
+}
+
+.input3{
+    padding: 15px;
+    height: 50px;
+    border-radius: 25px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+.add{
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 10%;
+    background-color: lime;
+    color: black;
+    cursor: pointer;
+    margin: 0.25rem;
+}
+
+.add:hover{
+	opacity: 0.7;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.item{
+	padding: 0.5rem;
+	border-bottom: 4px solid black;
+	margin-bottom: 1.5rem;
+}
+
+.item_input{
+	background: none;
+	outline: none;
+	border: none;
+	color: black;
+	font-size: 1.4rem;
+	width: 245px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.edit{
+	border-radius: 25px;
+	border: none;
+	color: lime;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+	margin: 0 0.5rem;
+	cursor: pointer;
+}
+
+.remove{
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	color: #E00;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+	cursor: pointer;
+}
