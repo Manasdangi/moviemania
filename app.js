@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'manasraj9669@gmail.com',
-    pass: 'Electrical@1'
+    pass: ''
   }
 });
 
@@ -33,23 +33,15 @@ app.post("/sign_up",(req,res)=>{
       subject: 'Sending Email using Node.js',
       text: content
     };
-  //  /* cron.schedule('*/1 * * * *', () => {
-  //     transporter.sendMail(mailOptions, function(error, info){
-  //       if (error) {
-  //         console.log(error);
-  //       } else {
-  //         console.log('Email sent: ' + info.response);
-  //       }
-  //     });
-  //   });*/
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
+  cron.schedule('*/1 * * * *', () => {
+     transporter.sendMail(mailOptions, function(error, info){
+       if (error) {
+       console.log(error);
       } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
-  
+          console.log('Email sent: ' + info.response);
+         }
+     });
+        });
 
 
 })
