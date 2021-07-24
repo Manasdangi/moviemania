@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <!-- meta tag -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +12,18 @@
     <title>Movie Api</title>
 
 <style>
+  /* style */
 * {
+  /* for background color */
   font-family: "Nunito",sans-serif;
-
-background-image: url(https://help.nflxext.com/0af6ce3e-b27a-4722-a5f0-e32af4df3045_what_is_netflix_5_en.png);
-
-background-attachment: fixed;
-    background-size: 100% 100%;
+  background-image: url(https://help.nflxext.com/0af6ce3e-b27a-4722-a5f0-e32af4df3045_what_is_netflix_5_en.png);
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 .maintitle{
-  text-align: center;
-  color: #ffffff;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   text-align: center;
+   color: #ffffff;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    font-weight: bolder;
    font-size: 30px;
 }
@@ -32,53 +32,54 @@ background-attachment: fixed;
   text-align: center;
   font-size: 20px;
   font-family: 'Shadows Into Light', cursive;
-font-family: 'Sue Ellen Francisco', cursive;
-font-family: 'Truculenta', sans-serif;
-letter-spacing: 1px;
-font-weight: 500;
-word-spacing: 2px;
-background: none;
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: 'Truculenta', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
+  word-spacing: 2px;
+  background: none;
 }
+/* collab class for both input form and movie list displaying field  */
 .collab{
+  /* using flex box property */
   display: flex;
   flex-direction: row;
   font-size: 30px;
   text-align: center;
   margin-left:16%;
-height:250px;
+  height:250px;
 }
 .input{
-width:42%;
-border:2px solid rgb(182, 160, 160);
-
+  width:42%;
+  border:2px solid rgb(182, 160, 160);
   height:92%;
-font-family:"Nunito",sans-serif ;
-text-transform: lowercase;
-letter-spacing: 2px;
-color: white;
-
+  font-family:"Nunito",sans-serif ;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: white;
 }
+
 #genre,#lan{
-width: 100%;
-height: 43px;
-padding: 5px 10px;
-background: #dacece;
-border: none;
-border-radius: 1px;
-font-weight:bold;
-font-size: 15px;
-letter-spacing: 2px;
+ width: 100%;
+ height: 43px;
+ padding: 5px 10px;
+ background: #dacece;
+ border: none;
+ border-radius: 1px;
+ font-weight:bold;
+ font-size: 15px;
+ letter-spacing: 2px;
 }
 .tag{
   margin-top: 15px;
   text-transform: uppercase;
   font-size: 15px;
   font-family: 'Shadows Into Light', cursive;
-font-family: 'Sue Ellen Francisco', cursive;
-font-family: 'Truculenta', sans-serif;
-font-weight: 700;
-word-spacing: 3px;
-letter-spacing: 2px
+ font-family: 'Sue Ellen Francisco', cursive;
+ font-family: 'Truculenta', sans-serif;
+ font-weight: 700;
+ word-spacing: 3px;
+ letter-spacing: 2px
 }
 
 .submit{
@@ -94,33 +95,34 @@ letter-spacing: 2px
   margin-top: 10px;
 }
 .card {
-  background-image: url(https://cdn-ssl.s7.disneystore.com/is/image/ShopDisney/mb_story-the-avengers_launch_2x?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200);
-
-border-top:2px solid rgb(236, 222, 222);
-border-right:2px solid rgb(255, 254, 254);
-border-bottom:2px solid rgb(255, 245, 245);
-    width:42%;
+ background-image: url(https://cdn-ssl.s7.disneystore.com/is/image/ShopDisney/mb_story-the-avengers_launch_2x?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200);
+ border-top:2px solid rgb(236, 222, 222);
+ border-right:2px solid rgb(255, 254, 254);
+ border-bottom:2px solid rgb(255, 245, 245);
+ width:42%;
  color: cornsilk;
-  height:92%;
+ height:92%;
 }
+/* styling movie list */
 .name1,.name2,.name3,.name4,.name5{
   font-family: 'Shadows Into Light', cursive;
-font-family: 'Special Elite', cursive;
-font-family: 'Stint Ultra Condensed', cursive;
-font-family: 'Sue Ellen Francisco', cursive;
-font-family: 'Truculenta', sans-serif;
-background: none;
-font-size: 19px;
+  font-family: 'Special Elite', cursive;
+  font-family: 'Stint Ultra Condensed', cursive;
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: 'Truculenta', sans-serif;
+  background: none;
+  font-size: 19px;
 }
 .listandreminder{
-  
+  /* //using flex box property for TowatchList and reminder box */
   display: flex;
   flex-direction: row;
   font-size: 20px;
   text-align: center;
   margin-left:20%;
-height:240px;
+  height:240px;
 }
+/* for towatchlist */
 
 .todo{
   margin-left:-11.5%;
@@ -150,9 +152,6 @@ ul li {
   user-select: none;
 }
 
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
 
 ul li:hover {
   background: #ddd;
@@ -218,7 +217,7 @@ ul li.checked::before {
   border-radius: 200px;
   text-transform: uppercase;
   margin-left: 37%;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .addBtn:hover {
   background-color: #bbb;
@@ -234,15 +233,15 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
   border:2px solid white;
   margin-left: -26%;
   width:33%;
-   background-image: url(https://5.imimg.com/data5/YX/GL/UV/SELLER-64014672/plain-textured-wallpaper-500x500.jpg);
+  background-image: url(https://5.imimg.com/data5/YX/GL/UV/SELLER-64014672/plain-textured-wallpaper-500x500.jpg);
 }
 .help1,.help2{
   background: none;
   color: white;
   font-size: large;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-text-transform: uppercase;
-font-weight: bold;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .reminder{
@@ -251,8 +250,8 @@ font-weight: bold;
   width:40%;
   font-weight: bolder;
   letter-spacing: 3px;
-color: white;
-height: 90%;
+  color: white;
+  height: 90%;
 }
 input[type=text] {
   width: 100%;
@@ -377,6 +376,8 @@ input[type=text] {
 	font-family: 'Hind', sans-serif;
 	cursor: pointer;
 }
+
+/* using media query for responsive layout   */
 @media (max-width: 1000px) {
   .title{
   font-size: 20px;
@@ -385,59 +386,59 @@ input[type=text] {
 }
   .collab{
     flex-direction: column;
-margin: auto;
-height:500px;
+    margin: auto;
+    height:500px;
 
   }
   .input {
-width:80%;margin: auto;
-font-size: 30px;
+   width:80%;margin: auto;
+   font-size: 30px;
 }
 .card {
-  border:4px solid rgb(88, 84, 84);
+    border:4px solid rgb(88, 84, 84);
     width:80%;
-   height:150%;margin: auto;
-   margin-top: 30px;
-     font-size: 13px;
+    height:150%;margin: auto;
+    margin-top: 30px;
+    font-size: 13px;
 }
 
 #genre,#lan,.submit{
-font-size: 19px;
+    font-size: 19px;
 }
 
 
 .listandreminder{
-  flex-direction: column;
-  margin: auto;
+    flex-direction: column;
+    margin: auto;
 
 }
 .reminder{
-  width:80%;
-  font-size: 40px;
-  margin: auto;
-  height:1000%;
+    width:80%;
+    font-size: 40px;
+    margin: auto;
+    height:1000%;
 }
 .reminderheading{
   margin:0;
   font-size: 20px;
 }
 input[type=text] {
-font-size: 15px;
-text-align: center;
-height: 5vh;
+  font-size: 15px;
+  text-align: center;
+  height: 5vh;
 }
 #submit1{
- font-size: 20px;
- height:9vh;
+  font-size: 20px;
+  height:9vh;
 }
 
 .todowhole{
-  background: none;
-  margin: auto;
-  margin-top: 12px;
-  margin-bottom: 12px;
-	border:3px solid rgb(214, 212, 212);	
-	width:80%;
+   background: none;
+   margin: auto;
+   margin-top: 12px;
+   margin-bottom: 12px;
+	 border:3px solid rgb(214, 212, 212);	
+	 width:80%;
 
 }
 
@@ -478,11 +479,9 @@ height: 5vh;
     background: none;
     height: 50px;
     border-radius: 25px;
-
     color: rgb(236, 202, 202);
     cursor: pointer;
     margin: 0.25rem;
-   
     font-weight: bolder;
     font-size: large;
     box-sizing: border-box;
@@ -531,6 +530,7 @@ height: 5vh;
 	font-family: 'Hind', sans-serif;
 	cursor: pointer;
 }
+
 }
 </style>
 </head>
@@ -557,7 +557,7 @@ height: 5vh;
        </select> 
     <br>
     <div class="tag"> 
-      <label for="cars" id="g">Choose a genre:</label>
+      <label id="g">Choose a genre:</label>
     </div>
     <select name="genre" id="genre" class="genre">
       <option value="27">Horror</option>
@@ -606,17 +606,19 @@ height: 5vh;
 </div>
 
 <script >
-  var input = document.querySelector('.input_text');
+// for showing trending movies list
+
+//using queryselector to fetch input
+var input = document.querySelector('.input_text');
 var input2 = document.querySelector('.genre');
 var main1 = document.querySelector('.name1');
 var main2 = document.querySelector('.name2');
 var main3 = document.querySelector('.name3');
 var main4 = document.querySelector('.name4');
 var main5 = document.querySelector('.name5');
-
 var button= document.querySelector('.submit');
 
-
+//using fetch API
 button.addEventListener('click', function(){
 fetch('https://api.themoviedb.org/3/movie/popular?api_key=4ded14e6763662148114c3c2106f139b')
 .then(response => response.json())
@@ -634,7 +636,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?api_key=4ded14e6763662148114c3
     }
   }
   }
-
+ //storing in array
   if(store.length>=1){
   main1.innerHTML = store[0];
   }
@@ -648,26 +650,30 @@ fetch('https://api.themoviedb.org/3/movie/popular?api_key=4ded14e6763662148114c3
   main5.innerHTML = store[4];
 })
 })
+
+//functionality for TowatchList
+
 const container = document.querySelector('.container');
 var inputValue = document.querySelector('.input3');
 const add = document.querySelector('.add');
 
+//checking in local storage first
 if(window.localStorage.getItem("todos") == undefined){
      var todos = [];
      window.localStorage.setItem("todos", JSON.stringify(todos));
 }
-
+//whatever in local storage ..just parse it
 var todosEX = window.localStorage.getItem("todos");
 var todos = JSON.parse(todosEX);
 
-
+//creating class on pressing button
 class item{
-	constructor(name){
+   	constructor(name){
 		this.createItem(name);
 	}
     createItem(name){
     	var itemBox = document.createElement('div');
-        itemBox.classList.add('item');
+      itemBox.classList.add('item');
 
     	var input = document.createElement('input');
     	input.type = "text";
@@ -681,10 +687,8 @@ class item{
     	remove.addEventListener('click', () => this.remove(itemBox, name));
 
     	container.appendChild(itemBox);
-
-        itemBox.appendChild(input);
-    
-        itemBox.appendChild(remove);
+      itemBox.appendChild(input);
+      itemBox.appendChild(remove);
 
     }
 
@@ -718,9 +722,9 @@ function check(){
 for (var v = 0 ; v < todos.length ; v++){
     new item(todos[v]);
 }
-
+//default item
 if(todos.length==0)
-new item('sports');
+new item('Parasite');
 
 </script>
 
