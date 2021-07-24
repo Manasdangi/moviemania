@@ -536,6 +536,7 @@ input[type=text] {
 </head>
 <body>
   <div>
+
 <div class="title">
 <h1 class="maintitle">WELCOME TO MOVIE MANIA SITE</h1>
 
@@ -545,6 +546,8 @@ input[type=text] {
   and Get ur watch list ..Is'nt it easy??</b></p>
 </div>
 <div class="collab">
+
+  <!-- Taking Inputs -->
   <div class="input">
       <div class="tag"> 
      <label for="lan" id="l" >Choose a language:</label>
@@ -570,6 +573,7 @@ input[type=text] {
      <br>  
        <input type="submit" value="Submit" class="submit">
    </div>
+     <!-- Movie List Card -->
   <div class="card">  
       <p class="name1" >Choose genre  and<br>
          <br>language then a list of<br>
@@ -582,7 +586,7 @@ input[type=text] {
       </div>
 </div>
 <div class="listandreminder">
-
+ <!-- ToWatchList -->
   <div class="todowhole"> 
      <p class="todotitle">ToWatchList</p>
     <div class="inputDiv">
@@ -592,6 +596,7 @@ input[type=text] {
     <div class="container"></div>
   </div>
 
+  <!-- reminder form -->
 <div class="reminder">
   <p style="text-align: center;" class="reminderheading">SET REMINDER</p>
   <form  action="/sign_up" method="POST" >
@@ -609,14 +614,14 @@ input[type=text] {
 // for showing trending movies list
 
 //using queryselector to fetch input
-var input = document.querySelector('.input_text');
-var input2 = document.querySelector('.genre');
-var main1 = document.querySelector('.name1');
-var main2 = document.querySelector('.name2');
-var main3 = document.querySelector('.name3');
-var main4 = document.querySelector('.name4');
-var main5 = document.querySelector('.name5');
-var button= document.querySelector('.submit');
+var input = document.querySelector('.input_text'); // language choice
+var input2 = document.querySelector('.genre');     // genre choice 
+var main1 = document.querySelector('.name1');      // 1st movie
+var main2 = document.querySelector('.name2');      // 2nd movie
+var main3 = document.querySelector('.name3');      // 3rd movie
+var main4 = document.querySelector('.name4');      // 4th movie 
+var main5 = document.querySelector('.name5');      // 5th movie
+var button= document.querySelector('.submit');     // submit button
 
 //using fetch API
 button.addEventListener('click', function(){
@@ -629,9 +634,9 @@ fetch('https://api.themoviedb.org/3/movie/popular?api_key=4ded14e6763662148114c3
     var size=data.results[i].genre_ids.length;
     for(let k=0;k<size;k++){
     if(input2.value==data['results'][i]['genre_ids'][k] &&  input.value==data['results'][i]['original_language']){
-      store.push (data['results'][i]['title']);
+    store.push (data['results'][i]['title']);
     j=j+1;
-      if(j==5)
+    if(j==5)
     break;
     }
   }
@@ -666,7 +671,7 @@ if(window.localStorage.getItem("todos") == undefined){
 var todosEX = window.localStorage.getItem("todos");
 var todos = JSON.parse(todosEX);
 
-//creating class on pressing button
+//creating items on pressing button
 class item{
    	constructor(name){
 		this.createItem(name);
