@@ -12,7 +12,7 @@
     <title>Movie Api</title>
 
 <style>
-  /* style */
+  /* css */
 * {
   /* for background color */
   font-family: "Nunito",sans-serif;
@@ -75,11 +75,11 @@
   text-transform: uppercase;
   font-size: 15px;
   font-family: 'Shadows Into Light', cursive;
- font-family: 'Sue Ellen Francisco', cursive;
- font-family: 'Truculenta', sans-serif;
- font-weight: 700;
- word-spacing: 3px;
- letter-spacing: 2px
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: 'Truculenta', sans-serif;
+  font-weight: 700;
+  word-spacing: 3px;
+  letter-spacing: 2px
 }
 
 .submit{
@@ -550,7 +550,7 @@ input[type=text] {
   <!-- Taking Inputs -->
   <div class="input">
       <div class="tag"> 
-     <label for="lan" id="l" >Choose a language:</label>
+     <label  id="l" >Choose a language:</label>
       </div>
      <select name="lan" id="lan" class="input_text">
        <option value="en">English</option>
@@ -585,7 +585,9 @@ input[type=text] {
         <p class="name5" > </p>    
       </div>
 </div>
+
 <div class="listandreminder">
+  
  <!-- ToWatchList -->
   <div class="todowhole"> 
      <p class="todotitle">ToWatchList</p>
@@ -653,6 +655,8 @@ fetch('https://api.themoviedb.org/3/movie/popular?api_key=4ded14e6763662148114c3
   main4.innerHTML = store[3];
   if(store.length>=5)
   main5.innerHTML = store[4];
+
+  store.clear();
 })
 })
 
@@ -677,28 +681,31 @@ class item{
 		this.createItem(name);
 	}
     createItem(name){
+      //created a div element
     	var itemBox = document.createElement('div');
-      itemBox.classList.add('item');
-
+      itemBox.classList.add('item');//added class "item"
+     
+      //created a input type
     	var input = document.createElement('input');
     	input.type = "text";
     	input.disabled = true;
     	input.value = name;
-    	input.classList.add('item_input');
+    	input.classList.add('item_input');//added class "item_input"
 
+      //created button 
     	var remove = document.createElement('button');
-    	remove.classList.add('remove');
-    	remove.innerHTML = "REMOVE";
+    	remove.classList.add('remove');//added class "remove"
+    	remove.innerHTML = "REMOVE";//text to show
     	remove.addEventListener('click', () => this.remove(itemBox, name));
 
-    	container.appendChild(itemBox);
-      itemBox.appendChild(input);
-      itemBox.appendChild(remove);
-
+   
+      itemBox.appendChild(input);//appended input childnode to itembox div
+      itemBox.appendChild(remove);//appended input childnode to itembox div
+      container.appendChild(itemBox);//appended itembox div container(another div)
     }
 
 
-
+    //function to remove movie name from list
     remove(itemBox, name){
         itemBox.parentNode.removeChild(itemBox);
         let index = todos.indexOf(name);
@@ -709,17 +716,19 @@ class item{
 
 add.addEventListener('click', check);
 window.addEventListener('keydown', (e) => {
-	if(e.which == 13){
+	if(e.which == 13){//add item on pressing enter button
 		check();
 	}
 })
 
+//this function is very important from
+//this function takes input 
 function check(){
 	if(inputValue.value != ""){
-		new item(inputValue.value);
-        todos.push(inputValue.value);
-        window.localStorage.setItem("todos", JSON.stringify(todos));
-		inputValue.value = "";
+		new item(inputValue.value);//call class(constructor and all item added  )
+        todos.push(inputValue.value);//store in todos array
+        window.localStorage.setItem("todos", JSON.stringify(todos));//store in local storage after json stringify
+		inputValue.value = "";//clear the input field
 	}
 }
 
