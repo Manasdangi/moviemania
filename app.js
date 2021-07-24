@@ -3,7 +3,7 @@ var express = require("express")
 var bodyParser = require("body-parser")
 var cron = require('node-cron');
 const hostname = '127.0.0.1';
-const port = process.env.PORT || 3900;
+const port =3900;
 const app = express()
 
 
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({
 
 app.post("/sign_up",(req,res)=>{
 
+  //getting data from reminder form
   var email = req.body.name;  
   var content= req.body.sub;
     var mailOptions = {
@@ -33,6 +34,8 @@ app.post("/sign_up",(req,res)=>{
       subject: 'Sending Email using Node.js',
       text: content
     };
+
+    //cron scheduler that send email after certain time(here is 1 minute)
   cron.schedule('*/1 * * * *', () => {
      transporter.sendMail(mailOptions, function(error, info){
        if (error) {
