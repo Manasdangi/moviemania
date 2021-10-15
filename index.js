@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'manasraj9669@gmail.com',
-    pass: ''
+    pass: '******'
   }
 });
 
@@ -34,17 +34,6 @@ app.post("/sign_up",(req,res)=>{
       subject: 'Sending Email using Node.js',
       text: content
     };
-
-    //cron scheduler that send email after certain time(here is 1 minute)
-  cron.schedule('*/1 * * * *', () => {
-     transporter.sendMail(mailOptions, function(error, info){
-       if (error) {
-       console.log(error);
-      } else {
-          console.log('Email sent: ' + info.response);
-         }
-     });
-        });
 
 
 })
