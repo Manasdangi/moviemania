@@ -2,8 +2,7 @@ var nodemailer = require('nodemailer');
 var express = require("express")
 var bodyParser = require("body-parser")
 var cron = require('node-cron');
-const hostname = '127.0.0.1';
-const port =3900;
+const port =process.env.PORT || 3900;
 const app = express()
 
 
@@ -37,6 +36,6 @@ app.post("/sign_up",(req,res)=>{
 
 
 })
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port,  () => {
+  console.log(`working`);
 });
